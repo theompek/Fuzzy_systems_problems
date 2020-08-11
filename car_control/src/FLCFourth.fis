@@ -1,0 +1,72 @@
+[System]
+Name='FLC'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='DV'
+Range=[0 1]
+NumMFs=3
+MF1='S':'trimf',[-0.4 0 0.5]
+MF2='M':'trimf',[0 0.5 1]
+MF3='L':'trimf',[0.5 1 1.4]
+
+[Input2]
+Name='DH'
+Range=[0 1]
+NumMFs=3
+MF1='S':'trimf',[-0.4 0 0.5]
+MF2='M':'trimf',[0 0.5 1]
+MF3='L':'trimf',[0.5 1 1.4]
+
+[Input3]
+Name='th'
+Range=[-180 180]
+NumMFs=3
+MF1='N':'trimf',[-324 -180 0]
+MF2='ZE':'trimf',[-180 0 180]
+MF3='P':'trimf',[0 180 324]
+
+[Output1]
+Name='dth'
+Range=[-130 130]
+NumMFs=3
+MF1='N':'trimf',[-234 -130 0]
+MF2='ZE':'trimf',[-130 0 130]
+MF3='P':'trimf',[0 130 234]
+[Rules]
+1 1 1, 2 (1) : 1
+2 1 1, 2 (1) : 1
+3 1 1, 2 (1) : 1
+1 2 1, 3 (1) : 1
+2 2 1, 2 (1) : 1
+3 2 1, 2 (1) : 1
+1 3 1, 3 (1) : 1
+2 3 1, 3 (1) : 1
+3 3 1, 3 (1) : 1
+1 1 2, 1 (1) : 1
+2 1 2, 1 (1) : 1
+3 1 2, 1 (1) : 1
+1 2 2, 1 (1) : 1
+2 2 2, 1 (1) : 1
+3 2 2, 1 (1) : 1
+1 3 2, 1 (1) : 1
+2 3 2, 2 (1) : 1
+3 3 2, 2 (1) : 1
+1 1 3, 3 (1) : 1
+2 1 3, 2 (1) : 1
+3 1 3, 2 (1) : 1
+1 2 3, 1 (1) : 1
+2 2 3, 1 (1) : 1
+3 2 3, 1 (1) : 1
+1 3 3, 1 (1) : 1
+2 3 3, 1 (1) : 1
+3 3 3, 1 (1) : 1
